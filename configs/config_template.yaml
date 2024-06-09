@@ -1,0 +1,43 @@
+model_config:
+    model_type: "huggingface" # ["huggingface", "openai", "bedrock"]
+    model_path: "kkuramitsu/tinycodellama-jp-0.13b-base"
+    tokenizer_path: "kkuramitsu/tinycodellama-jp-0.13b-base"
+    # api_key: null
+    generation_config:
+        max_new_tokens: 256
+        do_sample: false
+        # temperature: 0.0
+        # top_p: 1.0
+        repetition_penalty: 1.0
+        num_return_sequences: 1
+        return_full_text: False
+
+dataset_config:
+    dataset_type: "huggingface" # ["huggingface", "custom"]
+    dataset_path: "openai/openai_humaneval"
+    subset_name: null
+    split_name: "test"
+    num_head: 3 # int
+
+template_config:
+    prompt_template: "{prompt}"
+    postprocessing_config:
+        process: ["humaneval"]
+        # extract:
+            # begin_marker: /[PYTHON/]"
+            # end_marker: "/[\PYTHON/]"
+    reference_template: "\n{test}\ncheck({entry_point})"
+
+eval_config:
+    metrics: ["code_eval"] #["code_eval", "bleu", "rouge", "metero"]
+
+
+
+
+
+
+
+
+    
+
+

@@ -1,0 +1,13 @@
+pyyaml
+datasets
+evaluate
+urllib3
+transformers
+tokenizers
+torch 
+torchvision 
+torchaudio
+tqdm
+sentencepiece
+accelerate
+openai
